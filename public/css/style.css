@@ -1,0 +1,1045 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+  line-height: 1.6;
+}
+
+footer {
+  background-color: #0d3b7a;
+  color: #ffffff;
+  padding: 40px 40px 20px;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-col h4 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.footer-col p {
+  color: #cfd8e3;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+  color: #cfd8e3;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-col ul li a:hover {
+  color: #ffffff;
+}
+
+.footer-copy {
+  text-align: center;
+  border-top: 1px solid #345a95;
+  margin-top: 30px;
+  padding-top: 16px;
+  color: #cfd8e3;
+  font-size: 13px;
+}
+
+/* ============================
+   13 KOTO KAMPAR - TEMA HIJAU & EMAS
+   ============================ */
+:root {
+  --kampar-green: #1B4332;
+  --kampar-green-dark: #0D2818;
+  --kampar-gold: #D4AF37;
+}
+
+/* ============ NAVBAR ============ */
+.custom-navbar {
+  background-color: var(--kampar-green);
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.custom-navbar .navbar-brand {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--kampar-gold) !important;
+}
+
+.custom-navbar .nav-link {
+  color: #E8E8E8 !important;
+  font-weight: 500;
+  margin-left: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+  color: var(--kampar-gold) !important;
+}
+
+.custom-navbar .nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--kampar-gold);
+}
+
+/* ============ FOOTER ============ */
+.site-footer {
+  background-color: var(--kampar-green-dark) !important;
+}
+
+.footer-col h4 {
+  color: var(--kampar-gold) !important;
+}
+
+.footer-col ul li a:hover {
+  color: var(--kampar-gold) !important;
+}
+
+.footer-copy {
+  border-top: 1px solid rgba(212, 175, 55, 0.25) !important;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  background-color: rgba(212, 175, 55, 0.15);
+  color: var(--kampar-gold);
+  border-radius: 50%;
+  margin-right: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: var(--kampar-gold);
+  color: var(--kampar-green-dark);
+}
+
+/* ============================
+   HERO SECTION - PROFESSIONAL
+   ============================ */
+.hero-section {
+  position: relative;
+  min-height: 90vh;
+  background-image: url('/images/air-terjun-batu-dinding-kampar-kiri.webp');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  padding: 40px 20px;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(13, 40, 24, 0.75) 0%,
+    rgba(27, 67, 50, 0.55) 50%,
+    rgba(13, 40, 24, 0.85) 100%
+  );
+  z-index: 1;
+}
+
+.hero-section .container {
+  z-index: 2;
+  max-width: 750px;
+}
+
+.hero-badge {
+  background-color: rgba(212, 175, 55, 0.15);
+  border: 1px solid var(--kampar-gold);
+  color: var(--kampar-gold);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 50px;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: #E8E8E8;
+  max-width: 550px;
+  margin-bottom: 16px;
+}
+
+.hero-destinasi {
+  font-size: 0.95rem;
+  color: var(--kampar-gold);
+  font-weight: 500;
+}
+
+.btn-hero-primary {
+  background-color: var(--kampar-gold);
+  color: var(--kampar-green-dark);
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 6px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-hero-primary:hover {
+  background-color: #ffffff;
+  color: var(--kampar-green-dark);
+  transform: translateY(-2px);
+}
+
+.btn-hero-outline {
+  background-color: transparent;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 6px;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+.btn-hero-outline:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.hero-scroll-down {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: #ffffff;
+  font-size: 1.5rem;
+  opacity: 0.8;
+  animation: bounceDown 2s infinite;
+}
+
+@keyframes bounceDown {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 10px); }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* ============================
+   ABOUT / TENTANG SECTION
+   ============================ */
+.about-section {
+  padding: 90px 20px;
+  background-color: #ffffff;
+}
+
+.about-img-wrapper {
+  position: relative;
+}
+
+.about-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(13, 40, 24, 0.2);
+}
+
+.about-img-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background-color: var(--kampar-green);
+  color: #ffffff;
+  padding: 14px 22px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 10px 25px rgba(13, 40, 24, 0.3);
+}
+
+.about-img-badge i {
+  color: var(--kampar-gold);
+  font-size: 1.3rem;
+}
+
+.section-label {
+  display: inline-block;
+  color: var(--kampar-green);
+  background-color: rgba(27, 67, 50, 0.08);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 14px;
+}
+
+.about-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--kampar-green-dark);
+  margin-bottom: 18px;
+}
+
+.about-text {
+  color: #555555;
+  font-size: 1.02rem;
+  margin-bottom: 32px;
+}
+
+.about-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.about-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.about-feature-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background-color: rgba(27, 67, 50, 0.08);
+  color: var(--kampar-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+.about-feature-item h6 {
+  font-weight: 700;
+  color: var(--kampar-green-dark);
+  margin-bottom: 4px;
+}
+
+.about-feature-item p {
+  color: #666666;
+  font-size: 0.92rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+  .about-img-badge {
+    right: 12px;
+  }
+}
+
+/* ============================
+   DESTINASI PREVIEW (BERANDA)
+   ============================ */
+.destinasi-preview {
+  padding: 90px 20px;
+  background-color: #f7f9fc;
+}
+
+.destinasi-card-link {
+  text-decoration: none;
+  display: block;
+}
+
+.destinasi-card {
+  position: relative;
+  height: 340px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(13, 40, 24, 0.12);
+}
+
+.destinasi-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.destinasi-card:hover img {
+  transform: scale(1.08);
+}
+
+.destinasi-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 24px 20px;
+  background: linear-gradient(180deg, transparent 0%, rgba(13, 40, 24, 0.85) 100%);
+}
+
+.destinasi-overlay h5 {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.status-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.status-buka {
+  background-color: #1B4332;
+  color: #ffffff;
+}
+
+.status-tutup {
+  background-color: #B3261E;
+  color: #ffffff;
+}
+
+/* ============================
+   CONTACT SECTION
+   ============================ */
+.contact-section {
+  padding: 90px 20px;
+  background-color: #ffffff;
+}
+
+.contact-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(13, 40, 24, 0.15);
+}
+
+/* Panel Kiri - Info */
+.contact-info-panel {
+  background-color: var(--kampar-green-dark);
+  color: #ffffff;
+  padding: 50px 40px;
+  height: 100%;
+}
+
+.contact-info-panel h4 {
+  color: var(--kampar-gold);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.contact-info-desc {
+  color: #C9CDD3;
+  font-size: 0.92rem;
+  margin-bottom: 32px;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.contact-info-item i {
+  color: var(--kampar-gold);
+  font-size: 1.2rem;
+  margin-top: 2px;
+}
+
+.contact-info-item h6 {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+}
+
+.contact-info-item p {
+  color: #C9CDD3;
+  font-size: 0.88rem;
+  margin-bottom: 0;
+}
+
+/* Panel Kanan - Form */
+.contact-form-panel {
+  background-color: #ffffff;
+  padding: 50px 40px;
+  height: 100%;
+}
+
+.contact-form-panel .form-label {
+  font-weight: 600;
+  color: var(--kampar-green-dark);
+  font-size: 0.9rem;
+}
+
+.contact-form-panel .form-control {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.contact-form-panel .form-control:focus {
+  border-color: var(--kampar-green);
+  box-shadow: 0 0 0 3px rgba(27, 67, 50, 0.1);
+}
+
+.btn-contact-submit {
+  background-color: var(--kampar-green);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 12px 32px;
+  border-radius: 8px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-contact-submit:hover {
+  background-color: var(--kampar-green-dark);
+  color: var(--kampar-gold);
+}
+
+@media (max-width: 991px) {
+  .contact-info-panel,
+  .contact-form-panel {
+    padding: 36px 24px;
+  }
+}
+
+/* ============================
+   PAGE HEADER (HALAMAN DALAM)
+   ============================ */
+.page-header-section {
+  background-color: var(--kampar-green-dark);
+  padding: 70px 20px 50px;
+}
+
+.page-breadcrumb {
+  background-color: transparent;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.page-breadcrumb .breadcrumb-item a {
+  color: rgba(212, 175, 55, 0.85);
+  text-decoration: none;
+}
+
+.page-breadcrumb .breadcrumb-item a:hover {
+  color: var(--kampar-gold);
+}
+
+.page-breadcrumb .breadcrumb-item.active {
+  color: #E8E8E8;
+}
+
+.page-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  color: rgba(232, 232, 232, 0.5);
+}
+
+.page-header-title {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.page-header-subtitle {
+  color: #C9CDD3;
+  font-size: 1rem;
+  max-width: 600px;
+  margin-bottom: 0;
+}
+
+/* ============================
+   FILTER KATEGORI
+   ============================ */
+.filter-section {
+  background-color: #ffffff;
+  padding: 30px 20px 10px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.filter-tabs {
+  gap: 10px;
+}
+
+.filter-tab {
+  color: var(--kampar-green-dark) !important;
+  background-color: rgba(27, 67, 50, 0.06);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 8px 20px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.filter-tab:hover {
+  background-color: rgba(27, 67, 50, 0.12);
+}
+
+.filter-tab.active {
+  background-color: var(--kampar-green);
+  color: #ffffff !important;
+}
+
+/* ============================
+   GRID DESTINASI (HALAMAN DESTINASI)
+   ============================ */
+.destinasi-grid-section {
+  padding: 50px 20px 90px;
+  background-color: #f7f9fc;
+}
+
+.destinasi-full-card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  height: 100%;
+  box-shadow: 0 10px 30px rgba(13, 40, 24, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destinasi-full-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(13, 40, 24, 0.18);
+}
+
+.destinasi-full-card-img-wrap {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.destinasi-full-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.destinasi-full-card:hover .destinasi-full-card-img-wrap img {
+  transform: scale(1.08);
+}
+
+.category-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--kampar-green-dark);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.destinasi-full-card-body {
+  padding: 22px 20px;
+}
+
+.destinasi-full-card-body h5 {
+  font-weight: 700;
+  color: var(--kampar-green-dark);
+  margin-bottom: 10px;
+}
+
+.destinasi-full-desc {
+  color: #666666;
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+}
+
+.destinasi-full-meta {
+  color: var(--kampar-green);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.destinasi-full-meta i {
+  margin-right: 4px;
+}
+
+.btn-detail-card {
+  background-color: var(--kampar-green);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-detail-card:hover {
+  background-color: var(--kampar-green-dark);
+  color: var(--kampar-gold);
+}
+
+/* ============================
+   CTA PENUTUP (HALAMAN DESTINASI)
+   ============================ */
+.destinasi-cta-section {
+  background-color: var(--kampar-green);
+  padding: 70px 20px;
+}
+
+.destinasi-cta-title {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.destinasi-cta-text {
+  color: #E8E8E8;
+  font-size: 1rem;
+  max-width: 500px;
+  margin: 0 auto 26px;
+}
+
+/* ============================
+   VISI & MISI (HALAMAN TENTANG)
+   ============================ */
+.visi-misi-section {
+  padding: 90px 20px;
+  background-color: #f7f9fc;
+}
+
+.visi-misi-card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  padding: 36px 30px;
+  height: 100%;
+  box-shadow: 0 10px 30px rgba(13, 40, 24, 0.08);
+}
+
+.visi-misi-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background-color: rgba(27, 67, 50, 0.08);
+  color: var(--kampar-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+}
+
+.visi-misi-card h5 {
+  font-weight: 700;
+  color: var(--kampar-green-dark);
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+}
+
+.visi-misi-card p {
+  color: #555555;
+  font-size: 0.96rem;
+  margin-bottom: 0;
+}
+
+.visi-misi-list {
+  padding-left: 20px;
+  color: #555555;
+  font-size: 0.96rem;
+}
+
+.visi-misi-list li {
+  margin-bottom: 10px;
+}
+
+.visi-misi-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================
+   STATISTIK (HALAMAN TENTANG)
+   ============================ */
+.statistik-section {
+  background-color: var(--kampar-green);
+  padding: 70px 20px;
+}
+
+.statistik-card i {
+  color: var(--kampar-gold);
+  font-size: 2rem;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.statistik-card h3 {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.statistik-card p {
+  color: #E8E8E8;
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+/* ============================
+   BUDAYA & ADAT (HALAMAN TENTANG)
+   ============================ */
+.budaya-section {
+  padding: 90px 20px;
+  background-color: #ffffff;
+}
+
+.budaya-card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  height: 100%;
+  box-shadow: 0 10px 30px rgba(13, 40, 24, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.budaya-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(13, 40, 24, 0.18);
+}
+
+.budaya-card-img-wrap {
+  height: 200px;
+  overflow: hidden;
+}
+
+.budaya-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.budaya-card:hover .budaya-card-img-wrap img {
+  transform: scale(1.08);
+}
+
+.budaya-card-body {
+  padding: 22px 20px;
+}
+
+.budaya-card-body h5 {
+  font-weight: 700;
+  color: var(--kampar-green-dark);
+  margin-bottom: 10px;
+}
+
+.budaya-card-body p {
+  color: #666666;
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+/* ============================
+   HERO IMAGE (DETAIL DESTINASI)
+   ============================ */
+.detail-hero-image-section {
+  padding: 40px 20px 0;
+  background-color: #ffffff;
+}
+
+.detail-hero-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(13, 40, 24, 0.15);
+}
+
+.detail-hero-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .detail-hero-image-wrap {
+    height: 260px;
+  }
+}
+
+/* ============================
+   INFO UTAMA (DETAIL DESTINASI)
+   ============================ */
+.detail-info-section {
+  padding: 30px 20px 0;
+  background-color: #ffffff;
+}
+
+.detail-info-card {
+  background-color: #f7f9fc;
+  border-radius: 14px;
+  padding: 30px 20px;
+}
+
+.detail-info-item i {
+  color: var(--kampar-green);
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.detail-info-item h6 {
+  font-weight: 700;
+  color: var(--kampar-green-dark);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 4px;
+}
+
+.detail-info-item p {
+  color: #555555;
+  font-size: 0.92rem;
+  margin-bottom: 0;
+}
+
+/* ============================
+   DESKRIPSI LENGKAP (DETAIL DESTINASI)
+   ============================ */
+.detail-desc-section {
+  padding: 60px 20px;
+  background-color: #ffffff;
+}
+
+/* ============================
+   FASILITAS (DETAIL DESTINASI)
+   ============================ */
+.fasilitas-section {
+  padding: 20px 20px 60px;
+  background-color: #ffffff;
+}
+
+.fasilitas-item {
+  background-color: #f7f9fc;
+  border-radius: 12px;
+  padding: 22px 16px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.fasilitas-item:hover {
+  background-color: rgba(27, 67, 50, 0.08);
+}
+
+.fasilitas-item i {
+  color: var(--kampar-green);
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.fasilitas-item p {
+  color: var(--kampar-green-dark);
+  font-weight: 600;
+  font-size: 0.88rem;
+  margin-bottom: 0;
+}
+
+/* ============================
+   TIPS BERKUNJUNG (DETAIL DESTINASI)
+   ============================ */
+.tips-section {
+  padding: 0 20px 60px;
+  background-color: #ffffff;
+}
+
+.tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 750px;
+}
+
+.tips-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background-color: #f7f9fc;
+  border-radius: 10px;
+  padding: 14px 18px;
+}
+
+.tips-item i {
+  color: var(--kampar-green);
+  font-size: 1.1rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.tips-item p {
+  color: #555555;
+  font-size: 0.92rem;
+  margin-bottom: 0;
+}
+
+/* ============================
+   LOKASI & PETA (DETAIL DESTINASI)
+   ============================ */
+.lokasi-section {
+  padding: 0 20px 90px;
+  background-color: #ffffff;
+}
+
+.lokasi-map-wrap {
+  width: 100%;
+  height: 350px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(13, 40, 24, 0.1);
+}
