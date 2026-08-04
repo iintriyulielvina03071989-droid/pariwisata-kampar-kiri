@@ -18,6 +18,15 @@
             Temukan pesona alam, sejarah, dan budaya yang tersebar di seluruh penjuru Kampar Kiri.
         </p>
     </div>
+    <div class="destinasi-search-wrap">
+        <form action="{{ route('destinasi') }}" method="GET">
+            <div class="destinasi-search-box">
+                <i class="bi bi-search"></i>
+                <input type="text" name="cari" placeholder="Cari nama destinasi..." value="{{ $keyword ?? '' }}">
+                <button type="submit">Cari</button>
+            </div>
+        </form>
+    </div>
 </section>
 
 <section class="filter-section">
@@ -82,7 +91,9 @@
             </div>
         @endforelse
         </div>
-    </div>
+        <div class="d-flex justify-content-center mt-4 destinasi-pagination-wrap">
+            {{ $destinasiList->appends(['cari' => $keyword])->links('pagination::bootstrap-5') }}
+        </div>
 </section>
 
 <section class="destinasi-cta-section">
