@@ -4,6 +4,15 @@
 
 @section('content')
 
+@php
+    date_default_timezone_set("Asia/Jakarta");
+    $jamSekarang = now()->format('H:i:s');
+    $buka24Jam = is_null($destinasi->jam_buka) && is_null($destinasi->jam_tutup);
+    $isBuka = $buka24Jam
+        ? true
+        : ($jamSekarang >= $destinasi->jam_buka && $jamSekarang < $destinasi->jam_tutup);
+@endphp
+
 <section class="page-header-section">
     <div class="container">
         <nav aria-label="breadcrumb">
@@ -32,8 +41,10 @@
 <section class="detail-hero-image-section">
     <div class="container">
         <div class="detail-hero-image-wrap">
-            <img src="{{ asset('images/' . $destinasi->gambar) }}" alt="Air Terjun Batu Dinding">
-            <span class="status-badge status-buka">Sedang Buka</span>
+            <img src="{{ asset('images/' . $destinasi->gambar) }}" alt="{{ $destinasi->nama }}">
+            <span class="status-badge {{ $isBuka ? 'status-buka' : 'status-tutup' }}">
+                {{ $isBuka ? 'Sedang Buka' : 'Sudah Tutup' }}
+            </span>
         </div>
     </div>
 </section>
@@ -55,7 +66,13 @@
                     <div class="detail-info-item">
                         <i class="bi bi-clock-fill"></i>
                         <h6>Jam Operasional</h6>
-                        <p>{{ $destinasi->jam_buka . "-" . $destinasi->jam_tutup . "WIB"}}</p>
+                        <p>
+                            @if ($buka24Jam)
+                                Buka 24 Jam
+                            @else
+                                {{ \Carbon\Carbon::createFromFormat('H:i:s', $destinasi->jam_buka)->format('H:i') }} - {{ \Carbon\Carbon::createFromFormat('H:i:s', $destinasi->jam_tutup)->format('H:i') }} WIB
+                            @endif
+                        </p>
                     </div>
                 </div>
 
@@ -71,7 +88,7 @@
                     <div class="detail-info-item">
                         <i class="bi bi-check-circle-fill"></i>
                         <h6>Status</h6>
-                        <p>Sedang Buka</p>
+                        <p>{{ $isBuka ? 'Sedang Buka' : 'Sudah Tutup' }}</p>
                     </div>
                 </div>
 
@@ -172,9 +189,9 @@
 
         <div class="lokasi-map-wrap">
             <iframe
-                src="https://maps.app.goo.gl/2GqSgVMxJaCfcn93A"
+                src="https://www.google.com/maps?q={{ urlencode($destinasi->lokasi) }}&output=embed"
                 width="100%"
-                height="100%"
+                height="450"
                 style="border:0;"
                 allowfullscreen=""
                 loading="lazy"

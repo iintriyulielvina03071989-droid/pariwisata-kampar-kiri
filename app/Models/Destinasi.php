@@ -14,7 +14,17 @@ class Destinasi extends Model
     'nama', 'deskripsi', 'gambar', 'jam_buka', 'jam_tutup', 'lokasi',
 ];
 
+// app/Models/Destinasi.php
+public function getJamOperasionalAttribute()
+{
+    if (is_null($this->jam_buka) && is_null($this->jam_tutup)) {
+        return 'Buka 24 Jam';
+    }
 
+    return \Carbon\Carbon::parse($this->jam_buka)->format('H:i')
+        . ' - '
+        . \Carbon\Carbon::parse($this->jam_tutup)->format('H:i');
+}
 
 }
 

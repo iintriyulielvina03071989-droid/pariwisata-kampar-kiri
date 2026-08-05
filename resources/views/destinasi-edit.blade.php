@@ -93,7 +93,6 @@
                                     id="jam_buka"
                                     name="jam_buka"
                                     value="{{ old('jam_buka', $destinasi->jam_buka) }}"
-                                    required
                                 >
                             </div>
                             <div class="col-md-6 mb-3">
@@ -104,7 +103,6 @@
                                     id="jam_tutup"
                                     name="jam_tutup"
                                     value="{{ old('jam_tutup', $destinasi->jam_tutup) }}"
-                                    required
                                 >
                             </div>
                         </div>

@@ -54,10 +54,13 @@
         @forelse ($destinasiList as $destinasi)
             @php
                 // Asumsi: kolom jam_buka & jam_tutup bertipe TIME (format "08:00:00")
-                // Sesuaikan nama kolom di bawah kalau di migration/model kamu berbeda.
+                // Jika keduanya NULL, destinasi dianggap buka 24 jam.
                 date_default_timezone_set("Asia/Jakarta");
                 $jamSekarang = now()->format('H:i:s');
-                $isBuka = $jamSekarang >= $destinasi->jam_buka && $jamSekarang < $destinasi->jam_tutup;
+                $buka24Jam = is_null($destinasi->jam_buka) && is_null($destinasi->jam_tutup);
+                $isBuka = $buka24Jam
+                    ? true
+                    : ($jamSekarang >= $destinasi->jam_buka && $jamSekarang < $destinasi->jam_tutup);
             @endphp
             <div class="col-md-6 col-lg-4">
                 <div class="destinasi-full-card">
@@ -76,8 +79,12 @@
                         </p>
                         <div class="destinasi-full-meta">
                             <i class="bi bi-clock"></i>
-                            {{ \Carbon\Carbon::createFromFormat('H:i:s', $destinasi->jam_buka)->format('H:i') }} -
-                            {{ \Carbon\Carbon::createFromFormat('H:i:s', $destinasi->jam_tutup)->format('H:i') }} WIB
+                            @if ($buka24Jam)
+                                Buka 24 Jam
+                            @else
+                                {{ \Carbon\Carbon::createFromFormat('H:i:s', $destinasi->jam_buka)->format('H:i') }} -
+                                {{ \Carbon\Carbon::createFromFormat('H:i:s', $destinasi->jam_tutup)->format('H:i') }} WIB
+                            @endif
                         </div>
                         <a href="{{ route('destinasi.detail', $destinasi->id) }}" class="btn btn-detail-card">
                             Lihat Detail <i class="bi bi-arrow-right ms-1"></i>

@@ -11,28 +11,7 @@
         $ucapan = "Selamat Sore";
     } else {
         $ucapan = "Selamat Malam";
-    }
-
-    // Destinasi 1: Air Terjun Batu Dinding (08.00 - 17.00)
-    if ($jamSekarang >= 8 && $jamSekarang < 17) {
-        $status1 = "Sedang Buka";
-    } else {
-        $status1 = "Sudah Tutup";
-    }
-
-    // Destinasi 2: Istana Bersejarah Gunung Sahilan(09.00 - 16.00)
-    if ($jamSekarang >= 9 && $jamSekarang < 16) {
-        $status2 = "Sedang Buka";
-    } else {
-        $status2 = "Sudah Tutup";
-    }
-
-    // Destinasi 3: Sungai Subayang (06.00 - 18.00)
-    if ($jamSekarang >= 6 && $jamSekarang < 18) {
-        $status3 = "Sedang Buka";
-    } else {
-        $status3 = "Sudah Tutup";
-    }
+    }gitg
 ?>
 
 @extends('layouts.app')

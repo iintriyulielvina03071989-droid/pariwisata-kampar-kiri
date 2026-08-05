@@ -150,7 +150,7 @@
             <div class="col-md-6 col-lg-4">
                 <div class="budaya-card">
                     <div class="budaya-card-img-wrap">
-                        <img src="{{ asset('images/kesenian_tradisional.jpg') }}" alt="Kesenian Tradisional">
+                        <img src="{{ asset('images/Alat Musik Kampar.jpg') }}" alt="Kesenian Tradisional">
                     </div>
                     <div class="budaya-card-body">
                         <h5>Kesenian Tradisional</h5>

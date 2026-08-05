@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DestinasiController;
 use App\Models\Destinasi;
-
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AtraksiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +28,7 @@ Route::post('/destinasi', [DestinasiController::class, 'store'])->name('destinas
 Route::get('/destinasi/{id}/edit', [DestinasiController::class, 'edit'])->name('destinasi.edit');
 Route::put('/destinasi/{id}', [DestinasiController::class, 'update'])->name('destinasi.update');
 Route::delete('/destinasi/{id}', [DestinasiController::class, 'destroy'])->name('destinasi.destroy');
+
  
 // Route {id} generik selalu PALING BAWAH:
 Route::get('/destinasi/{id}', [DestinasiController::class, 'show'])->name('destinasi.detail');
@@ -39,7 +41,6 @@ Route::get('/kontak', function () {
     return view('kontak');
 })->name('kontak');
 
-use App\Http\Controllers\UserController;
 
 Route::get('/user', [UserController::class, 'index'])->name('user');
 Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
@@ -47,3 +48,10 @@ Route::post('/user', [UserController::class, 'store'])->name('user.store');
 Route::get('/user/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
 Route::put('/user/{id}', [UserController::class, 'update'])->name('user.update');
 Route::delete('/user/{id}', [UserController::class, 'destroy'])->name('user.destroy');
+
+Route::get('/atraksi', [AtraksiController::class, 'index'])->name('atraksi');
+Route::get('/atraksi/create', [AtraksiController::class, 'create'])->name('atraksi.create');
+Route::post('/atraksi', [AtraksiController::class, 'store'])->name('atraksi.store');
+Route::get('/atraksi/{id}/edit', [AtraksiController::class, 'edit'])->name('atraksi.edit');
+Route::put('/atraksi/{id}', [AtraksiController::class, 'update'])->name('atraksi.update');
+Route::delete('/atraksi/{id}', [AtraksiController::class, 'destroy'])->name('atraksi.destroy');
