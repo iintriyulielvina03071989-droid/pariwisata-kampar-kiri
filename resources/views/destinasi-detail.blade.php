@@ -52,9 +52,9 @@
 <section class="detail-info-section">
     <div class="container">
         <div class="detail-info-card">
-            <div class="row g-4 text-center">
+            <div class="row g-4 text-center row-cols-2 row-cols-md-5">
 
-                <div class="col-6 col-md-3">
+                <div class="col">
                     <div class="detail-info-item">
                         <i class="bi bi-tag-fill"></i>
                         <h6>Kategori</h6>
@@ -62,7 +62,7 @@
                     </div>
                 </div>
 
-                <div class="col-6 col-md-3">
+                <div class="col">
                     <div class="detail-info-item">
                         <i class="bi bi-clock-fill"></i>
                         <h6>Jam Operasional</h6>
@@ -76,7 +76,7 @@
                     </div>
                 </div>
 
-                <div class="col-6 col-md-3">
+                <div class="col">
                     <div class="detail-info-item">
                         <i class="bi bi-geo-alt-fill"></i>
                         <h6>Lokasi</h6>
@@ -84,11 +84,19 @@
                     </div>
                 </div>
 
-                <div class="col-6 col-md-3">
+                <div class="col">
                     <div class="detail-info-item">
                         <i class="bi bi-check-circle-fill"></i>
                         <h6>Status</h6>
                         <p>{{ $isBuka ? 'Sedang Buka' : 'Sudah Tutup' }}</p>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="detail-info-item detail-info-item-highlight">
+                        <i class="bi bi-ticket-perforated-fill"></i>
+                        <h6>Harga Tiket</h6>
+                        <p>{{ $destinasi->harga_tiket == 0 ? 'Gratis' : 'Rp ' . number_format($destinasi->harga_tiket, 0, ',', '.') }}</p>
                     </div>
                 </div>
 

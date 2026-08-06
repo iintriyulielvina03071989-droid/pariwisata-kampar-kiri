@@ -11,7 +11,7 @@
         $ucapan = "Selamat Sore";
     } else {
         $ucapan = "Selamat Malam";
-    }gitg
+    } 
 ?>
 
 @extends('layouts.app')

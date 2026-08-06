@@ -26,7 +26,7 @@
 
             <div class="col-lg-6">
                 <div class="about-img-wrapper">
-                    <img src="{{ asset('images/air-terjun-batu tilam.jpeg') }}" alt="Kampar Kiri" class="about-img">
+                    <img src="{{ asset('images/batu tilam.jpg') }}" alt="Kampar Kiri" class="about-img">
                     <div class="about-img-badge">
                         <i class="bi bi-clock-history"></i>
                         <span>Kaya Sejarah & Budaya</span>

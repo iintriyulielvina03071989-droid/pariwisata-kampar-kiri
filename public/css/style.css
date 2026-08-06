@@ -1172,3 +1172,12 @@ footer {
   box-shadow: none;
 }
 
+.detail-info-item.detail-info-item-highlight {
+    background-color: #eafaf1;
+    border-radius: 12px;
+    padding: 10px 6px;
+}
+.detail-info-item.detail-info-item-highlight i,
+.detail-info-item.detail-info-item-highlight h6 {
+    color: #0f3d2e;
+}

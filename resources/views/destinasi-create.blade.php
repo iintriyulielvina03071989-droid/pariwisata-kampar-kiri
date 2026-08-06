@@ -94,7 +94,6 @@
                                     id="jam_buka"
                                     name="jam_buka"
                                     value="{{ old('jam_buka') }}"
-                                    required
                                 >
                             </div>
                             <div class="col-md-6 mb-3">
@@ -105,7 +104,6 @@
                                     id="jam_tutup"
                                     name="jam_tutup"
                                     value="{{ old('jam_tutup') }}"
-                                    required
                                 >
                             </div>
                         </div>
@@ -119,6 +117,19 @@
                                 name="lokasi"
                                 value="{{ old('lokasi') }}"
                                 placeholder="contoh: Kecamatan Siak, Kabupaten Siak"
+                            >
+                        </div>
+                        <div class="mb-4">
+                            <label for="harga_tiket" class="form-label">Harga Tiket (Rp)</label>
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="harga_tiket"
+                                name="harga_tiket"
+                                value="{{ old('harga_tiket') }}"
+                                placeholder="contoh: 10000"
+                                min="0"
+                                required
                             >
                         </div>
 

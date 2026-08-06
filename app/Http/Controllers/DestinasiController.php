@@ -44,6 +44,7 @@ class DestinasiController extends Controller
     'jam_buka'   => 'nullable|required_with:jam_tutup|date_format:H:i',
     'jam_tutup'  => 'nullable|required_with:jam_buka|date_format:H:i|after:jam_buka',
     'lokasi'     => 'nullable|string|max:255',
+    'harga_tiket'  => 'required|numeric|min:0',
 ], [
     'nama.required'         => 'Nama destinasi wajib diisi.',
     'nama.max'              => 'Nama destinasi maksimal 255 karakter.',
@@ -52,6 +53,8 @@ class DestinasiController extends Controller
     'jam_tutup.date_format' => 'Format jam tutup harus HH:MM, contoh 17:00.',
     'jam_tutup.required_with' => 'Jam tutup wajib diisi jika jam buka diisi (atau kosongkan keduanya jika buka 24 jam).',
     'jam_tutup.after'       => 'Jam tutup harus lebih besar dari jam buka.',
+    'harga_tiket.required' => 'Harga tiket wajib diisi.',
+    'harga_tiket.numeric'  => 'Harga tiket harus berupa angka.',
 ]);
 
         $destinasi = Destinasi::create($validated);
@@ -76,6 +79,7 @@ class DestinasiController extends Controller
     'jam_buka'   => 'nullable|required_with:jam_tutup|date_format:H:i',
     'jam_tutup'  => 'nullable|required_with:jam_buka|date_format:H:i|after:jam_buka',
     'lokasi'     => 'nullable|string|max:255',
+    'harga_tiket'  => 'required|numeric|min:0',
 ], [
     'nama.required'         => 'Nama destinasi wajib diisi.',
     'nama.max'              => 'Nama destinasi maksimal 255 karakter.',
@@ -84,6 +88,8 @@ class DestinasiController extends Controller
     'jam_tutup.date_format' => 'Format jam tutup harus HH:MM, contoh 17:00.',
     'jam_tutup.required_with' => 'Jam tutup wajib diisi jika jam buka diisi (atau kosongkan keduanya jika buka 24 jam).',
     'jam_tutup.after'       => 'Jam tutup harus lebih besar dari jam buka.',
+    'harga_tiket.required' => 'Harga tiket wajib diisi.',
+    'harga_tiket.numeric'  => 'Harga tiket harus berupa angka.',
 ]);
 
         $destinasi->update($validated);
