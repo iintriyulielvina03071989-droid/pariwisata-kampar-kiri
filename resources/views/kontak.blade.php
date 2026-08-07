@@ -50,7 +50,7 @@
                             <i class="bi bi-clock-fill"></i>
                             <div>
                                 <h6>Jam Operasional</h6>
-                                <p>Setiap Hari, 06.00 - 18.00 WIB</p>
+                                <p>Setiap Hari, 08.00 - 16.00 WIB</p>
                             </div>
                         </div>
 

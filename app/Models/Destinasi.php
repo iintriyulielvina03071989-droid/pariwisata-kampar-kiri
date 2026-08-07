@@ -25,6 +25,10 @@ public function getJamOperasionalAttribute()
         . ' - '
         . \Carbon\Carbon::parse($this->jam_tutup)->format('H:i');
 }
+public function atraksi()
+{
+    return $this->hasMany(Atraksi::class);
+}
 
 }
 
