@@ -128,7 +128,7 @@
                 <div class="col-md-4">
                     <a href="{{ route('destinasi') }}" class="destinasi-card-link">
                         <div class="destinasi-card">
-                            <img src="{{ asset('images/' . $destinasi->gambar) }}" alt="{{ $destinasi->nama }}">
+                            <img src="{{ asset('storage/' . $destinasi->gambar) }}" alt="{{ $destinasi->nama }}">
                             <span class="status-badge {{ $statusBuka ? 'status-buka' : 'status-tutup' }}">
                                 {{ $statusBuka ? 'Sedang Buka' : 'Sudah Tutup' }}
                             </span>

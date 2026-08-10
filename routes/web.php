@@ -5,6 +5,7 @@ use App\Http\Controllers\DestinasiController;
 use App\Models\Destinasi;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AtraksiController;
+use App\Http\Controllers\UlasanController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,3 +56,6 @@ Route::post('/atraksi', [AtraksiController::class, 'store'])->name('atraksi.stor
 Route::get('/atraksi/{id}/edit', [AtraksiController::class, 'edit'])->name('atraksi.edit');
 Route::put('/atraksi/{id}', [AtraksiController::class, 'update'])->name('atraksi.update');
 Route::delete('/atraksi/{id}', [AtraksiController::class, 'destroy'])->name('atraksi.destroy');
+
+Route::get('/destinasi/{id}/ulasan/create', [UlasanController::class, 'create'])->name('ulasan.create');
+Route::post('/ulasan', [UlasanController::class, 'store'])->name('ulasan.store');

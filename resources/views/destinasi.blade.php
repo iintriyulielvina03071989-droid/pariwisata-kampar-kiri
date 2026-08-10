@@ -65,7 +65,7 @@
             <div class="col-md-6 col-lg-4">
                 <div class="destinasi-full-card">
                     <div class="destinasi-full-card-img-wrap">
-                        <img src="{{ $destinasi->gambar ? asset('images/'.$destinasi->gambar) : asset('images/default-destinasi.jpg') }}"
+                        <img src="{{ $destinasi->gambar ? asset('storage/'.$destinasi->gambar) : asset('images/default-destinasi.jpg') }}"
                              alt="{{ $destinasi->nama }}">
                         <span class="status-badge {{ $isBuka ? 'status-buka' : 'status-tutup' }}">
                             {{ $isBuka ? 'Sedang Buka' : 'Sudah Tutup' }}

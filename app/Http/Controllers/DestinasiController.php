@@ -23,9 +23,7 @@ class DestinasiController extends Controller
 
     public function show($id)
     {
-        $destinasi = Destinasi::with('atraksi')->findOrFail($id);
-
-        $destinasi = Destinasi::findOrFail($id);
+    $destinasi = Destinasi::with(['atraksi', 'ulasan.user'])->findOrFail($id);
 
         return view('destinasi-detail', [
             'destinasi' => $destinasi,
@@ -39,10 +37,9 @@ class DestinasiController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
-    'nama'       => 'required|string|max:255',
-    'deskripsi'  => 'nullable|string',
-    'gambar'     => 'nullable|string|max:255',
+       $validated = $request->validate([
+    'nama' => 'required|min:3',
+    'gambar' => 'required|image|max:2048',
     'jam_buka'   => 'nullable|required_with:jam_tutup|date_format:H:i',
     'jam_tutup'  => 'nullable|required_with:jam_buka|date_format:H:i|after:jam_buka',
     'lokasi'     => 'nullable|string|max:255',
@@ -59,6 +56,8 @@ class DestinasiController extends Controller
     'harga_tiket.numeric'  => 'Harga tiket harus berupa angka.',
 ]);
 
+        $validated['gambar'] = $request->file('gambar')->store('destinasi', 'public');
+        Destinasi::create($validated);
         $destinasi = Destinasi::create($validated);
         return redirect()->route('destinasi.detail', $destinasi->id)
             ->with('success', 'Destinasi berhasil ditambahkan!');
@@ -93,6 +92,13 @@ class DestinasiController extends Controller
     'harga_tiket.required' => 'Harga tiket wajib diisi.',
     'harga_tiket.numeric'  => 'Harga tiket harus berupa angka.',
 ]);
+if ($request->hasFile('gambar')) {
+    $validated['gambar'] = $request->file('gambar')->store('destinasi', 'public');
+} else {
+    unset($validated['gambar']);
+}
+ 
+$destinasi->update($validated);
 
         $destinasi->update($validated);
         return redirect()->route('destinasi.detail', $destinasi->id)
