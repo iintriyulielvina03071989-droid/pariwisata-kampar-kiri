@@ -6,6 +6,7 @@ use App\Models\Destinasi;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AtraksiController;
 use App\Http\Controllers\UlasanController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,5 +58,13 @@ Route::get('/atraksi/{id}/edit', [AtraksiController::class, 'edit'])->name('atra
 Route::put('/atraksi/{id}', [AtraksiController::class, 'update'])->name('atraksi.update');
 Route::delete('/atraksi/{id}', [AtraksiController::class, 'destroy'])->name('atraksi.destroy');
 
-Route::get('/destinasi/{id}/ulasan/create', [UlasanController::class, 'create'])->name('ulasan.create');
-Route::post('/ulasan', [UlasanController::class, 'store'])->name('ulasan.store');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
+Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
+Route::post('/register', [AuthController::class, 'register'])->name('register.submit');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/destinasi/{id}/ulasan/create', [UlasanController::class, 'create'])->name('ulasan.create');
+    Route::post('/ulasan', [UlasanController::class, 'store'])->name('ulasan.store');
+});

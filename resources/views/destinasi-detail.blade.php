@@ -237,7 +237,7 @@
         @forelse ($destinasi->atraksi as $atraksi)
             <div class="col-md-4">
                 <div class="card h-100">
-                    <img src="{{ asset('images/' . $atraksi->gambar) }}" class="card-img-top">
+                    <img src="{{ asset('storage/' . $atraksi->gambar) }}" class="card-img-top">
                     <div class="card-body">
                         <h6 class="card-title">{{ $atraksi->nama }}</h6>
                         <span class="badge bg-secondary">{{ $atraksi->kategori }}</span>

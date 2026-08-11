@@ -65,6 +65,30 @@
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('kontak') ? 'active' : '' }}" href="{{ route('kontak') }}">Kontak</a>
                 </li>
+                @guest
+                    <a href="{{ route('login') }}" class="btn btn-outline-light btn-sm me-2">Login</a>
+                    <a href="{{ route('register') }}" class="btn btn-light btn-sm">Daftar</a>
+                @else
+                    <div class="dropdown">
+                        <a class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                        href="#" data-bs-toggle="dropdown">
+                            <span class="rounded-circle bg-light text-dark d-flex align-items-center justify-content-center fw-bold"
+                                style="width:32px;height:32px;">
+                                {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><span class="dropdown-item-text fw-bold">{{ Auth::user()->name }}</span></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <form action="{{ route('logout') }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item text-danger">Logout</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                @endguest
             </ul>
         </div>
     </div>
@@ -136,6 +160,6 @@
 
     <p class="footer-copy">&copy; {{ date('Y') }} Kampar Kiri. All rights reserved.</p>
 </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

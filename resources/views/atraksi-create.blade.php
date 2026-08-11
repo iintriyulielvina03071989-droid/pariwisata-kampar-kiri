@@ -20,7 +20,7 @@
 
                     <h2 class="card-title mb-4">Tambah Atraksi Baru</h2>
 
-                    <form action="{{ route('atraksi.store') }}" method="POST">
+                    <form action="{{ route('atraksi.store') }}" method="POST"enctype="multipart/form-data">
                         @csrf
 <select name="destinasi_id" class="form-select @error('destinasi_id') is-invalid @enderror">
     <option value="" selected disabled>-- Pilih Destinasi --</option>
@@ -77,10 +77,7 @@
 
                         <div class="mb-4">
                             <label for="gambar" class="form-label">Nama File Gambar</label>
-                            <input type="text" name="gambar"
-                                   class="form-control @error('gambar') is-invalid @enderror"
-                                   value="{{ old('gambar') }}"
-                                   placeholder="contoh: tari-zapin.jpg">
+                            <input type="file" name="gambar" class="form-control" accept="image/*" required>
                             @error('gambar')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
