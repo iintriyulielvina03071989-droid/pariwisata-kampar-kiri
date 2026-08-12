@@ -57,7 +57,7 @@
 
             <div class="col-lg-6">
                 <div class="about-img-wrapper">
-                    <img src="{{ asset('storage/air-terjun-batu-dinding-kampar-kiri.webp') }}" alt="Kampar Kiri" class="about-img">
+                    <img src="{{ asset('images/air-terjun-batu-dinding-kampar-kiri.webp') }}" alt="Kampar Kiri" class="about-img">
                     <div class="about-img-badge">
                         <i class="bi bi-award-fill"></i>
                         <span>Destinasi Unggulan Riau</span>

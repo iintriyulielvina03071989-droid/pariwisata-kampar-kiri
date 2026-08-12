@@ -23,18 +23,30 @@
             </ol>
         </nav>
 
-        <form action="{{ route('destinasi.destroy', $destinasi->id) }}" method="POST"
-      onsubmit="return confirm('Yakin ingin menghapus data ini?')">
-    @csrf
-    @method('DELETE')
-    <button type="submit">Hapus Destinasi</button>
-</form>
+        <div class="d-flex justify-content-between align-items-start flex-wrap gap-3">
+            <div>
+                <h1 class="page-header-title">{{ $destinasi->nama }}</h1>
+                <p class="page-header-subtitle mb-0">
+                    {{ $destinasi->deskripsi }}
+                </p>
+            </div>
 
-
-        <h1 class="page-header-title">{{ $destinasi->nama }}</h1>
-        <p class="page-header-subtitle">
-            {{ $destinasi->deskripsi }}
-        </p>
+            @if(Auth::check() && Auth::user()->role === 'admin')
+                <div class="destinasi-detail-actions flex-shrink-0">
+                    <a href="{{ route('destinasi.edit', $destinasi->id) }}" class="btn btn-edit-destinasi">
+                        <i class="bi bi-pencil-fill me-1"></i> Edit
+                    </a>
+                    <form action="{{ route('destinasi.destroy', $destinasi->id) }}" method="POST"
+                          onsubmit="return confirm('Yakin ingin menghapus data ini?')" class="d-inline">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-hapus-destinasi">
+                            <i class="bi bi-trash-fill me-1"></i> Hapus
+                        </button>
+                    </form>
+                </div>
+            @endif
+        </div>
     </div>
 </section>
 

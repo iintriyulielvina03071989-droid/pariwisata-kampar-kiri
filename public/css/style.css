@@ -1181,3 +1181,60 @@ footer {
 .detail-info-item.detail-info-item-highlight h6 {
     color: #0f3d2e;
 }
+
+/* ============================
+   AKSI ADMIN: TOMBOL EDIT & HAPUS DESTINASI
+   ============================ */
+.destinasi-detail-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-edit-destinasi {
+  background-color: var(--kampar-gold);
+  color: var(--kampar-green-dark);
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.btn-edit-destinasi:hover {
+  background-color: #ffffff;
+  color: var(--kampar-green-dark);
+}
+
+.btn-hapus-destinasi {
+  background-color: transparent;
+  color: #ff9b9b;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1.5px solid #ff9b9b;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.btn-hapus-destinasi:hover {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #ffffff;
+}
+
+@media (max-width: 576px) {
+  .destinasi-detail-actions {
+    width: 100%;
+  }
+  .destinasi-detail-actions .btn-edit-destinasi,
+  .destinasi-detail-actions .btn-hapus-destinasi {
+    flex: 1;
+    justify-content: center;
+  }
+}

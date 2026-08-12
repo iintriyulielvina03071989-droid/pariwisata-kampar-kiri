@@ -76,7 +76,7 @@ class DestinasiController extends Controller
        $validated = $request->validate([
     'nama'       => 'required|string|max:255',
     'deskripsi'  => 'nullable|string',
-    'gambar'     => 'nullable|string|max:255',
+    'gambar'     => 'nullable|image|max:2048',
     'jam_buka'   => 'nullable|required_with:jam_tutup|date_format:H:i',
     'jam_tutup'  => 'nullable|required_with:jam_buka|date_format:H:i|after:jam_buka',
     'lokasi'     => 'nullable|string|max:255',
