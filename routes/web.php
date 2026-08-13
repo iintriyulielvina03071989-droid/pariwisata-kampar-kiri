@@ -8,6 +8,9 @@ use App\Http\Controllers\AtraksiController;
 use App\Http\Controllers\UlasanController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\KategoriController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +53,15 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/atraksi/{id}/edit', [AtraksiController::class, 'edit'])->name('atraksi.edit');
     Route::put('/atraksi/{id}', [AtraksiController::class, 'update'])->name('atraksi.update');
     Route::delete('/atraksi/{id}', [AtraksiController::class, 'destroy'])->name('atraksi.destroy');
+
+    // Kategori
+    Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori');
+    Route::get('/kategori/create', [KategoriController::class, 'create'])->name('kategori.create');
+    Route::post('/kategori', [KategoriController::class, 'store'])->name('kategori.store');
+    Route::get('/kategori/{id}/edit', [KategoriController::class, 'edit'])->name('kategori.edit');
+    Route::put('/kategori/{id}', [KategoriController::class, 'update'])->name('kategori.update');
+    Route::delete('/kategori/{id}', [KategoriController::class, 'destroy'])->name('kategori.destroy');
+
 
 });
 

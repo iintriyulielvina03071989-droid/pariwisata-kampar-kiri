@@ -298,7 +298,9 @@
         <a href="{{ route('user') }}" class="{{ request()->routeIs('user*') ? 'active' : '' }}">
             <i class="bi bi-people-fill"></i> Kelola User
         </a>
-
+        <a href="{{ route('kategori') }}" class="{{ request()->routeIs('kategori*') ? 'active' : '' }}">
+            <i class="bi bi-tags-fill"></i> Kelola Kategori
+        </a>
         <div class="sidebar-footer">
             <a href="{{ route('beranda') }}"><i class="bi bi-box-arrow-left"></i> Kembali ke Situs</a>
         </div>

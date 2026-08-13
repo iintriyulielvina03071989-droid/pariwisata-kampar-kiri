@@ -23,6 +23,11 @@
             </ol>
         </nav>
 
+        @if($destinasi->kategori)
+            <span class="badge bg-secondary">{{ $destinasi->kategori->nama_kategori }}</span>
+        @endif
+
+
         <div class="d-flex justify-content-between align-items-start flex-wrap gap-3">
             <div>
                 <h1 class="page-header-title">{{ $destinasi->nama }}</h1>
@@ -254,6 +259,36 @@
                         <h6 class="card-title">{{ $atraksi->nama }}</h6>
                         <span class="badge bg-secondary">{{ $atraksi->kategori }}</span>
                     </div>
+
+                    <div class="mt-2">
+    <button type="button" class="btn btn-sm btn-outline-primary"
+            data-bs-toggle="modal" data-bs-target="#modalAtraksi{{ $atraksi->id }}">
+        Lihat Detail
+    </button>
+</div>
+
+<!-- Modal Detail Atraksi -->
+<div class="modal fade" id="modalAtraksi{{ $atraksi->id }}" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{ $atraksi->nama }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="{{ asset('storage/' . $atraksi->gambar) }}" class="img-fluid rounded mb-3" alt="{{ $atraksi->nama }}">
+                <span class="badge bg-secondary mb-2">{{ $atraksi->kategori }}</span>
+                <p class="fw-bold">Rp {{ number_format($atraksi->harga, 0, ',', '.') }}</p>
+                <p>{{ $atraksi->deskripsi }}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
                 </div>
             </div>
         @empty

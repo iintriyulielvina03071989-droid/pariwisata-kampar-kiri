@@ -40,22 +40,18 @@
 </section>
 
 <section class="filter-section">
-    <div class="container">
-        <ul class="nav filter-tabs justify-content-center flex-wrap">
-            <li class="nav-item">
-                <a class="nav-link filter-tab active" href="#">Semua</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link filter-tab" href="#">Wisata Alam</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link filter-tab" href="#">Wisata Sejarah</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link filter-tab" href="#">Wisata Air</a>
-            </li>
-        </ul>
-    </div>
+    <div class="d-flex flex-wrap gap-2 mb-4">
+    <a href="{{ route('destinasi', array_filter(['cari' => $keyword])) }}"
+       class="btn btn-sm rounded-pill {{ !$kategoriId ? 'btn-primary' : 'btn-outline-primary' }}">
+        Semua
+    </a>
+    @foreach ($kategoriList as $kategori)
+        <a href="{{ route('destinasi', array_filter(['cari' => $keyword, 'kategori' => $kategori->id])) }}"
+           class="btn btn-sm rounded-pill {{ $kategoriId == $kategori->id ? 'btn-primary' : 'btn-outline-primary' }}">
+            {{ $kategori->nama_kategori }}
+        </a>
+    @endforeach
+</div>
 </section>
 
 <section class="destinasi-grid-section">
@@ -80,8 +76,12 @@
                         <span class="status-badge {{ $isBuka ? 'status-buka' : 'status-tutup' }}">
                             {{ $isBuka ? 'Sedang Buka' : 'Sudah Tutup' }}
                         </span>
-                        <span class="category-badge">{{ $destinasi->kategori }}</span>
+                        
+
                     </div>
+                    @if($destinasi->kategori)
+                            <span class="badge bg-secondary">{{ $destinasi->kategori->nama_kategori }}</span>
+                        @endif
                     <div class="destinasi-full-card-body">
                         <h5>{{ $destinasi->nama }}</h5>
                         <p class="destinasi-full-desc">
