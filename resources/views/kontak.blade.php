@@ -66,7 +66,23 @@
 
                 <div class="col-lg-7">
                     <div class="contact-form-panel">
-                        <form>
+                            
+                        @if (session('success'))
+    <div class="alert alert-success">{{ session('success') }}</div>
+@endif
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul class="mb-0">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+                             </ul>
+                         </div>
+                        @endif
+
+                        <form action="{{ route('kontak.send') }}" method="POST">
+                        @csrf
+
                             <div class="mb-3">
                                 <label for="nama" class="form-label">Nama</label>
                                 <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan nama Anda">
